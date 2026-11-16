@@ -16,8 +16,16 @@
 
 package org.jetbrains.kotlin.asJava
 
+import org.jetbrains.annotations.ApiStatus
 import org.jetbrains.kotlin.load.java.structure.LightClassOriginKind
 
+/**
+ * Marks a Java PSI class that represents a Kotlin declaration.
+ */
+@ApiStatus.Internal
 interface KtLightClassMarker {
+    /**
+     * Whether the Kotlin declaration comes from a source file or from a compiled library.
+     */
     val originKind: LightClassOriginKind
 }
